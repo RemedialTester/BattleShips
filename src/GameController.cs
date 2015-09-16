@@ -15,7 +15,7 @@ using SwinGameSDK;
 namespace BattleShips
 {
 	
-	public static class GameController
+	public class GameController
 	{
 
 		private static BattleShipsGame _theGame;
