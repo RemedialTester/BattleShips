@@ -72,7 +72,7 @@ namespace Battleships
 
 		public static Font GameFont(string font)
 		{
-			return _Fonts(font);
+			return _Fonts[font];
 		}
 
 		/// <summary>
@@ -83,7 +83,7 @@ namespace Battleships
 
 		public static Bitmap GameImage(string image)
 		{
-			return _Images(image);
+			return _Images[image];
 		}
 
 		/// <summary>
@@ -94,7 +94,7 @@ namespace Battleships
 
 		public static SoundEffect GameSound(string sound)
 		{
-			return _Sounds(sound);
+			return _Sounds[sound];
 		}
 
 		/// <summary>
@@ -105,7 +105,7 @@ namespace Battleships
 
 		public static Music GameMusic(string music)
 		{
-			return _Music(music);
+			return _Music[music];
 		}
 
 		private static Dictionary<string, Bitmap> _Images = new Dictionary<string, Bitmap>();
@@ -277,7 +277,7 @@ namespace Battleships
 
 		private static void FreeImages()
 		{
-			foreach (Font obj in _Images.Values) 
+			foreach (Bitmap obj in _Images.Values) 
 			{
 				SwinGame.FreeBitmap(obj);
 			}
