@@ -8,7 +8,7 @@ using System.Diagnostics;
 using SwinGameSDK;
 
 
-namespace Battleships
+namespace BattleShips
 {
 	public static class GameResources
 	{
