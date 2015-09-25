@@ -7,13 +7,14 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using SwinGameSDK;
 
-/// <summary>
-/// The GameController is responsible for controlling the game,
-/// managing user input, and displaying the current state of the
-/// game.
-/// </summary>
+
 namespace BattleShips
 {
+	/// <summary>
+	/// The GameController is responsible for controlling the game,
+	/// managing user input, and displaying the current state of the
+	/// game.
+	/// </summary>
 	
 	public class GameController
 	{
