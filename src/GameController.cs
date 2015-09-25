@@ -14,8 +14,7 @@ namespace BattleShips
 	/// The GameController is responsible for controlling the game,
 	/// managing user input, and displaying the current state of the
 	/// game.
-	/// </summary>
-	
+	/// </summary>	
 	public class GameController
 	{
 
@@ -55,7 +54,7 @@ namespace BattleShips
 			get { return _ai; }
 		}
 
-		static GameController()
+		public GameController()
 		{
 			//bottom state will be quitting. If player exits main menu then the game is over
 			_state.Push(GameState.Quitting);
