@@ -6,6 +6,7 @@ using System.Collections.Generic;
 //using System.Data;
 using System.Diagnostics;
 using SwinGameSDK;
+/*
 using static BattleShips.GameController;
 using static BattleShips.UtilityFunctions;
 using static BattleShips.GameResources;
@@ -13,8 +14,7 @@ using static BattleShips.DeploymentController;
 using static BattleShips.DiscoveryController;
 using static BattleShips.EndingGameController;
 using static BattleShips.HighScoreController;
-
-
+*/
 namespace BattleShips
 {
 	/// <summary>
