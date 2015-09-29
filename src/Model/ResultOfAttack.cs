@@ -5,40 +5,45 @@ using System.Collections;
 using System.Collections.Generic;
 // using System.Data;
 using System.Diagnostics;
-/// <summary>
-/// The result of an attack.
-/// </summary>
-public enum ResultOfAttack
+
+namespace BattleShips
 {
-	/// <summary>
-	/// The player hit something
-	/// </summary>
-	Hit,
 
 	/// <summary>
-	/// The player missed
+	/// The result of an attack.
 	/// </summary>
-	Miss,
+	public enum ResultOfAttack
+	{
+		/// <summary>
+		/// The player hit something
+		/// </summary>
+		Hit,
 
-	/// <summary>
-	/// The player destroyed a ship
-	/// </summary>
-	Destroyed,
+		/// <summary>
+		/// The player missed
+		/// </summary>
+		Miss,
 
-	/// <summary>
-	/// That location was already shot.
-	/// </summary>
-	ShotAlready,
+		/// <summary>
+		/// The player destroyed a ship
+		/// </summary>
+		Destroyed,
 
-	/// <summary>
-	/// The player killed all of the opponents ships
-	/// </summary>
-	GameOver
+		/// <summary>
+		/// That location was already shot.
+		/// </summary>
+		ShotAlready,
+
+		/// <summary>
+		/// The player killed all of the opponents ships
+		/// </summary>
+		GameOver
+	}
+
+	//=======================================================
+	//Service provided by Telerik (www.telerik.com)
+	//Conversion powered by NRefactory.
+	//Twitter: @telerik
+	//Facebook: facebook.com/telerik
+	//=======================================================
 }
-
-//=======================================================
-//Service provided by Telerik (www.telerik.com)
-//Conversion powered by NRefactory.
-//Twitter: @telerik
-//Facebook: facebook.com/telerik
-//=======================================================
