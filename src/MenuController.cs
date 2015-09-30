@@ -6,6 +6,7 @@ using System.Collections.Generic;
 //using System.Data;
 using System.Diagnostics;
 using SwinGameSDK;
+
 /*
 using static BattleShips.GameController;
 using static BattleShips.UtilityFunctions;
@@ -14,7 +15,10 @@ using static BattleShips.DeploymentController;
 using static BattleShips.DiscoveryController;
 using static BattleShips.EndingGameController;
 using static BattleShips.HighScoreController;
+using stativ BattleShips.GameLogic;
+using stativ BattleShips.GameState;
 */
+
 namespace BattleShips
 {
 	/// <summary>
@@ -121,14 +125,14 @@ namespace BattleShips
 		/// <returns>false if a clicked missed the buttons. This can be used to check prior menus.</returns>
 		private static bool HandleMenuInput(int menu, int level, int xOffset)
 		{
-			if (SwinGame.KeyTyped(KeyCode.VK_ESCAPE)) {
-				EndCurrentState();
+			if (SwinGame.KeyTyped(KeyCode.vk_ESCAPE)) {
+				GameController.EndCurrentState();
 				return true;
 			}
 
 			if (SwinGame.MouseClicked(MouseButton.LeftButton)) {
 				int i = 0;
-				for (i = 0; i <= _menuStructure(menu).Length - 1; i++) {
+				for (i = 0; i <= _menuStructure[menu].Length - 1; i++) {
 					//IsMouseOver the i'th button of the menu
 					if (IsMouseOverMenu(i, level, xOffset)) {
 						PerformMenuAction(menu, i);
@@ -138,7 +142,7 @@ namespace BattleShips
 
 				if (level > 0) {
 					//none clicked - so end this sub menu
-					EndCurrentState();
+					GameController.EndCurrentState();
 				}
 			}
 
@@ -208,11 +212,11 @@ namespace BattleShips
 
 			btnTop = MENU_TOP - (MENU_GAP + BUTTON_HEIGHT) * level;
 			int i = 0;
-			for (i = 0; i <= _menuStructure(menu).Length - 1; i++) {
+			for (i = 0; i <= _menuStructure[menu].Length - 1; i++) {
 				int btnLeft = 0;
 				btnLeft = MENU_LEFT + BUTTON_SEP * (i + xOffset);
 				//SwinGame.FillRectangle(Color.White, btnLeft, btnTop, BUTTON_WIDTH, BUTTON_HEIGHT)
-				SwinGame.DrawTextLines(_menuStructure(menu)(i), MENU_COLOR, Color.Black, GameFont("Menu"), FontAlignment.AlignCenter, btnLeft + TEXT_OFFSET, btnTop + TEXT_OFFSET, BUTTON_WIDTH, BUTTON_HEIGHT);
+				SwinGame.DrawTextLines(_menuStructure[menu][i], MENU_COLOR, Color.Black, GameResources.GameFont("Menu"), FontAlignment.AlignCenter, btnLeft + TEXT_OFFSET, btnTop + TEXT_OFFSET, BUTTON_WIDTH, BUTTON_HEIGHT);
 
 				if (SwinGame.MouseDown(MouseButton.LeftButton) & IsMouseOverMenu(i, level, xOffset)) {
 					SwinGame.DrawRectangle(HIGHLIGHT_COLOR, btnLeft, btnTop, BUTTON_WIDTH, BUTTON_HEIGHT);
@@ -242,7 +246,7 @@ namespace BattleShips
 			int btnTop = MENU_TOP - (MENU_GAP + BUTTON_HEIGHT) * level;
 			int btnLeft = MENU_LEFT + BUTTON_SEP * (button + xOffset);
 
-			return IsMouseInRectangle(btnLeft, btnTop, BUTTON_WIDTH, BUTTON_HEIGHT);
+			return UtilityFunctions.IsMouseInRectangle(btnLeft, btnTop, BUTTON_WIDTH, BUTTON_HEIGHT);
 		}
 
 		/// <summary>
@@ -273,16 +277,16 @@ namespace BattleShips
 		{
 			switch (button) {
 				case MAIN_MENU_PLAY_BUTTON:
-					StartGame();
+					GameController.StartGame();
 					break;
 				case MAIN_MENU_SETUP_BUTTON:
-					AddNewState(GameState.AlteringSettings);
+					GameController.AddNewState(GameState.AlteringSettings);
 					break;
 				case MAIN_MENU_TOP_SCORES_BUTTON:
-					AddNewState(GameState.ViewingHighScores);
+					GameController.AddNewState(GameState.ViewingHighScores);
 					break;
 				case MAIN_MENU_QUIT_BUTTON:
-					EndCurrentState();
+					GameController.EndCurrentState();
 					break;
 			}
 		}
@@ -295,17 +299,17 @@ namespace BattleShips
 		{
 			switch (button) {
 				case SETUP_MENU_EASY_BUTTON:
-					SetDifficulty(AIOption.Hard);
+					GameController.SetDifficulty(AIOption.Hard);
 					break;
 				case SETUP_MENU_MEDIUM_BUTTON:
-					SetDifficulty(AIOption.Hard);
+					GameController.SetDifficulty(AIOption.Hard);
 					break;
 				case SETUP_MENU_HARD_BUTTON:
-					SetDifficulty(AIOption.Hard);
+					GameController.SetDifficulty(AIOption.Hard);
 					break;
 			}
 			//Always end state - handles exit button as well
-			EndCurrentState();
+			GameController.EndCurrentState();
 		}
 
 		/// <summary>
@@ -316,16 +320,16 @@ namespace BattleShips
 		{
 			switch (button) {
 				case GAME_MENU_RETURN_BUTTON:
-					EndCurrentState();
+					GameController.EndCurrentState();
 					break;
 				case GAME_MENU_SURRENDER_BUTTON:
-					EndCurrentState();
+					GameController.EndCurrentState();
 					//end game menu
-					EndCurrentState();
+					GameController.EndCurrentState();
 					//end game
 					break;
 				case GAME_MENU_QUIT_BUTTON:
-					AddNewState(GameState.Quitting);
+					GameController.AddNewState(GameState.Quitting);
 					break;
 			}
 		}

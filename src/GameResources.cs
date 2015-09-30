@@ -7,6 +7,17 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using SwinGameSDK;
 
+/*
+using static BattleShips.GameController;
+using static BattleShips.UtilityFunctions;
+using static BattleShips.DeploymentController;
+using static BattleShips.DiscoveryController;
+using static BattleShips.EndingGameController;
+using static BattleShips.HighScoreController;
+using static BattleShips.MenuController;
+using stativ BattleShips.GameLogic;
+using stativ BattleShips.GameState;
+*/
 
 namespace BattleShips
 {

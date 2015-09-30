@@ -6,6 +6,7 @@ using System.Collections.Generic;
 //using System.Data;
 using System.Diagnostics;
 using SwinGameSDK;
+
 /*
 using static BattleShips.GameController;
 using static BattleShips.UtilityFunctions;
@@ -15,7 +16,9 @@ using static BattleShips.DiscoveryController;
 using static BattleShips.EndingGameController;
 using static BattleShips.HighScoreController;
 using static BattleShips.MenuController;
+using stativ BattleShips.GameState;
 */
+
 namespace BattleShips
 {
 	static class GameLogic
@@ -26,20 +29,20 @@ namespace BattleShips
 			SwinGame.OpenGraphicsWindow("Battle Ships", 800, 600);
 
 			//Load Resources
-			LoadResources();
+			GameResources.LoadResources();
 
-			SwinGame.PlayMusic(GameMusic("Background"));
+			SwinGame.PlayMusic(GameResources.GameMusic("Background"));
 
 			//Game Loop
 			do {
-				HandleUserInput();
-				DrawScreen();
-			} while (!(SwinGame.WindowCloseRequested() == true | CurrentState == GameState.Quitting));
+				GameController.HandleUserInput();
+				GameController.DrawScreen();
+			} while (!(SwinGame.WindowCloseRequested() == true | GameController.CurrentState == GameState.Quitting));
 
 			SwinGame.StopMusic();
 
 			//Free Resources and Close Audio, to end the program.
-			FreeResources();
+			GameResources.FreeResources();
 		}
 	}
 
