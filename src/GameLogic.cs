@@ -33,6 +33,8 @@ namespace BattleShips
 
 			SwinGame.PlayMusic(GameResources.GameMusic("Background"));
 
+			new GameController();
+
 			//Game Loop
 			do {
 				GameController.HandleUserInput();
