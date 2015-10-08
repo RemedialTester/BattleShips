@@ -218,6 +218,16 @@ namespace BattleShips
 				//SwinGame.FillRectangle(Color.White, btnLeft, btnTop, BUTTON_WIDTH, BUTTON_HEIGHT)
 				SwinGame.DrawTextLines(_menuStructure[menu][i], MENU_COLOR, Color.Black, GameResources.GameFont("Menu"), FontAlignment.AlignCenter, btnLeft + TEXT_OFFSET, btnTop + TEXT_OFFSET, BUTTON_WIDTH, BUTTON_HEIGHT);
 
+/*				if (_menuStructure[menu][i] == _menuStructure[1][0]) {
+					SwinGame.DrawTextLines(_menuStructure[1][0], MENU_COLOR, Color.Peru, GameResources.GameFont("Menu"), FontAlignment.AlignCenter, btnLeft + TEXT_OFFSET, btnTop + TEXT_OFFSET, BUTTON_WIDTH, BUTTON_HEIGHT);
+				}
+				else if (_menuStructure[menu][i] == _menuStructure[1][1]) {
+					SwinGame.DrawTextLines(_menuStructure[1][1], MENU_COLOR, Color.Orange, GameResources.GameFont("Menu"), FontAlignment.AlignCenter, btnLeft + TEXT_OFFSET, btnTop + TEXT_OFFSET, BUTTON_WIDTH, BUTTON_HEIGHT);
+				}
+				else if (_menuStructure[menu][i] == _menuStructure[1][2]) {
+					SwinGame.DrawTextLines(_menuStructure[1][2], MENU_COLOR, Color.Orange, GameResources.GameFont("Menu"), FontAlignment.AlignCenter, btnLeft + TEXT_OFFSET, btnTop + TEXT_OFFSET, BUTTON_WIDTH, BUTTON_HEIGHT);
+				} //this code changes the colour of the textbox -> seek dirrent location or code
+*/
 				if (SwinGame.MouseDown(MouseButton.LeftButton) & IsMouseOverMenu(i, level, xOffset)) {
 					SwinGame.DrawRectangle(HIGHLIGHT_COLOR, btnLeft, btnTop, BUTTON_WIDTH, BUTTON_HEIGHT);
 				}
@@ -299,10 +309,10 @@ namespace BattleShips
 		{
 			switch (button) {
 				case SETUP_MENU_EASY_BUTTON:
-					GameController.SetDifficulty(AIOption.Hard);
+					GameController.SetDifficulty(AIOption.Easy);
 					break;
 				case SETUP_MENU_MEDIUM_BUTTON:
-					GameController.SetDifficulty(AIOption.Hard);
+					GameController.SetDifficulty(AIOption.Medium);
 					break;
 				case SETUP_MENU_HARD_BUTTON:
 					GameController.SetDifficulty(AIOption.Hard);
