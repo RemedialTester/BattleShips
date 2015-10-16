@@ -23,7 +23,7 @@ namespace BattleShips
 		private enum AIStates
 		{
 			Searching,
-			RandShot
+			ProcessShot
 		}
 
 		private AIStates _CurrentState = AIStates.Searching;
