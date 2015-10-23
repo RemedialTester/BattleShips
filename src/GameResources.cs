@@ -72,7 +72,7 @@ namespace BattleShips
 
 		private static void LoadMusic()
 		{
-			NewMusic("Background", "horrordrone.mp3");
+			NewMusic("Background", "Starwars.mp3");
 		}
 
 		/// <summary>
