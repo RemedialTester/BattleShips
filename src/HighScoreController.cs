@@ -30,7 +30,7 @@ namespace BattleShips
 	/// </remarks>
 	static class HighScoreController
 	{
-		private const int NAME_WIDTH = 3;
+		private const int NAME_WIDTH = 12;
 
 		private const int SCORES_LEFT = 490;
 		/// <summary>
