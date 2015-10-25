@@ -187,14 +187,18 @@ namespace BattleShips
 
 			switch (result.Value) {
 				case ResultOfAttack.Destroyed:
+				_hits += 1;
+				_shots += 1;
 				break;
-			case ResultOfAttack.ShotAlready:
+				case ResultOfAttack.ShotAlready:
 				break;
-				case ResultOfAttack.Hit:
-					_hits += 1;
+			case ResultOfAttack.Hit:
+				_hits += 1;
+				_shots += 1;
 					break;
-				case ResultOfAttack.Miss:
-					_misses += 1;
+			case ResultOfAttack.Miss:
+				_misses += 1;
+				_shots += 1;
 					break;
 			}
 
