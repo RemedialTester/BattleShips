@@ -30,6 +30,7 @@ namespace BattleShips
 			NewFont("Courier", "cour.ttf", 14);
 			NewFont("CourierSmall", "cour.ttf", 8);
 			NewFont("Menu", "ffaccess.ttf", 8);
+			NewFont("MenuLarge", "ffaccess.ttf", 40);
 		}
 
 		private static void LoadImages()
