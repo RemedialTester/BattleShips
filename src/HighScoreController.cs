@@ -206,7 +206,7 @@ namespace BattleShips
 
 				s.Name = SwinGame.TextReadAsASCII();
 
-				if (s.Name.Length < 3) {
+				if (s.Name.Length < 12) {
 					s.Name = s.Name + new string(Convert.ToChar(" "), 3 - s.Name.Length);
 				}
 
