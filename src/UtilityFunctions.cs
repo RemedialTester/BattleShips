@@ -269,7 +269,7 @@ namespace BattleShips
 
 		public static void AddExplosion(int row, int col)
 		{
-			AddAnimation(row, col, "Splash");
+			AddAnimation(row, col, "Explosion");
 		}
 
 		public static void AddSplash(int row, int col)
